@@ -1,0 +1,29 @@
+// INPUT: un programma
+// OUTPUT: terminare il programma se è in esecuzione
+
+#!/bin/bash
+
+if[$#-eq0];
+then
+	echo "nessun parametro"
+
+elif[$#-gt1];
+then
+	echo "troppi parametri"
+
+else
+	program_id = $(ps-e | grep $1 | awk '{print $1}')		
+	if [program_id - eq0];
+	then
+		echo "programma non in esecuzione";
+	else
+		kill program_id											// termino il programma
+		echo "programma trovato e interrotto"
+	fi
+fi
+
+// COMMENTO RIGA 15
+   creo variabile program_id
+   con ps-e mi spuntano tutti i programm in esecuzione dettagliatamente
+   con grep $* prendo tutti i programmi
+   con awk '{print $1}' stampa il primo, che è quello che mi serve

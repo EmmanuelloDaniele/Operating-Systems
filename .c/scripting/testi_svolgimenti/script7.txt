@@ -1,0 +1,19 @@
+// INPUT: file
+// OUTPUT: stampare file dove ogni riga è preceduta dal suo numero corrispondente
+
+#!/bin/bash
+
+if[$# lt 1];
+then
+	echo "nessun parametro"
+
+elif[$# gt 1];
+then
+	echo "troppi parametri"
+
+else
+	if [-f $*]
+	then
+		grep -n [a-z] $* 			// -n per il numero, [a-z] perchè cerco un qualsiasi carattere
+	fi
+fi

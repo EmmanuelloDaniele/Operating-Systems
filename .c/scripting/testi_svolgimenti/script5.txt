@@ -1,0 +1,21 @@
+// INPUT: file quesito1.tx
+// OUTPUT: stampare righe in cui è presente la stringa 'thread' nel file 
+
+#!/bin/bash
+
+if[$# - eq0];
+then
+	echo "nessun parametro"
+
+elif[$# - gt1];
+then
+	echo "troppi parametri"
+
+else
+	if[-f $#];
+	then
+		grep -i thread quesito1.txt			// prendo le righe dove è presrente la parola thread... 
+	else
+		echo "file non presente"
+	fi
+fi

@@ -1,0 +1,21 @@
+// INPUT: path di una directory e stringa da ricercare nei file .txt
+// OUTPUT: file che contengono la stringa, e il numero di riga in cui è stata trovata
+
+#!/bin/bash
+
+if[$# - le1];
+then
+	echo "pochi parametri"
+
+elif[$# - ge3];
+then	
+	echo "troppi parametri"
+
+else:
+	if[-d $1];
+	then
+		grep -n $2 *.txt					// prendo il numero della stringa (-n) e la stringa ($2) dal file txt
+	else
+		echo "directory non presente"
+	fi
+fi

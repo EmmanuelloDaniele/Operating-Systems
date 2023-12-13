@@ -1,0 +1,26 @@
+// INPUT:	directory e due stringhe;
+// OUTPUT:	modifica proprietario e gruppo di file che iniziano con 'A';
+
+#!/bin/bash										// si mette sempre
+
+if [$#-le2];									// se tutti gli argomenti in input sono minori o uguali a 2		
+then
+	echo 'pochi parametri'						// stampa
+elif [$#-ge4];									// se tutti gli argomenti in input sono maggiori o uguali a 4
+then
+	echo 'troppi parametri'						// stampa
+else
+	if[-d $1];									// se il primo argomento passato in input è nella directory
+	then
+		cd$1									// entra nella directory
+		$ls-l/awk '$NF~/^A/'|chmod "u=$2", "g=$3"		
+	fi
+fi
+
+
+// 	COMMENTO RIGA 16:
+	$ls-l divide in campi e li mostra in maniera estesa
+	/awk filtra in piu campi
+	NF è ultimo campo e metto poi A per prendere i nomi dei file che iniziano con A
+	chmod modifica
+	u modifica proprietario e g il gruppo //

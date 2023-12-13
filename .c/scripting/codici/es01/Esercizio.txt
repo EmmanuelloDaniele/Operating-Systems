@@ -1,0 +1,3 @@
+Si crei un comando che sposti i soli file/link:
+• il cui nome termina per lettera a seguita da un numero nella directory dirA
+• il cui nome termina per lettera b seguita da un numero nella directory dirB

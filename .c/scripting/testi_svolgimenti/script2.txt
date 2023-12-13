@@ -1,0 +1,20 @@
+// INPUT: 	directory
+// OUTPUT:	file java con metodo main e compila
+
+#!/bin/bash
+
+if[$#-eq0];											// se i parametri in input sono 0
+then
+	echo "nessun parametro"							// stampa
+elif[$#-gt1];										// altrimenti, se i parametri in input sono da 2 in su
+then
+	echo "troppi parametri"							// stampa
+else												// altrimenti
+	if[-d $#];										// se quello che hai in input è una directory
+	then
+		cd $#										// apri quello che hai in input
+			grep main *\.java && javac*\.java		// trova il file .java che contiene "main" e (&&) successivamente lo compila
+		else
+			echo "directory inesistente"
+	fi
+fi
